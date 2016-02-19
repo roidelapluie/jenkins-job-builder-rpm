@@ -1,0 +1,14 @@
+sudo: required
+services:
+- docker
+script:
+- make
+deploy:
+  provider: releases
+  api_key:
+    secure: fFk9ckjLTEed/ucf6kdD6br4U2pOHxX+wP7N5eBzvfdfIEfj7+qcOHZ47naBJT3g/gBCQV3VAE6Xplol6MMMVBO6JRKJSqbT9GV4t5R4WJLhCO6TKJWVWsz8xancX8UAvBifX9UABIx848h4MlEFKp28vgK2t3FctVSVn2Yfq8re6mHhi4orszdIHupem0EyEf6ZdghSzmc1C6rG19HfXIGbt+CQuky7UKhA242YgMgV7ke81+kWkoj0fvYFq7IqctYAtynBeZ7Z9R6DL6tIRqo6dJniSAPXBZ5/vU2wIuQmxxXz2x9kf18k3+Y3ccFH34fXPNCjCmmk1wA7oZz/shickfAypUB9ozGCNV/ZywsyO6d4oSbpApfUBkvdnwg0S0ps4m57YujXID2luL9cdSp0+12jxrYo5krv0J6yQlpIlnV1DS5zS8/ZOr+1Oa6gr5sxDEObW3Zt6VnQkua9M8/V02oHnilKlkgqOIHpiAF6xfTMVv5GI3G/VP4FV4Ip6tYOXCsQElXDK3Z1poWuOL31J/kl6fBzxyCs1hmMEy7uXiflHMAGaFmsO7wV3nowRwWMLjDyd6NsusDFHFtcjG7mGukh1HyD+ZP34JVMbJdSHJkDv7yDNnvaameOzlWYYWux6WW2ftHe+ETH8on+6GrZWwlxLWwAtqVbMywOqd4=
+  skip_cleanup: true
+  file_glob: true
+  file: python-*.rpm
+  on:
+    tags: true
